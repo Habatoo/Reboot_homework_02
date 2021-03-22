@@ -15,6 +15,32 @@ public class MyBranching
      * На этот метод необходимо написать unit-тест
      * Тест должен содержать mock на объект {@link Utils} (реализация неизвестна)
      * Необходимо проверить результат выполнения метода в зависимости от возможных реализаций {@link Utils}
+     * @param i1 - первое значение
+     * @param i2 - второе значение
+     * @return - большее из значений или 0, если Utils#utilFunc2 вернёт true;
+     */
+    public int maxInt(int i1, int i2)
+    {
+        if (this.utils.utilFunc2())
+        {
+            for (int iter = 0; iter < i1; iter++)
+            {
+                do
+                {
+                    this.utils.utilFunc1("Hello");
+                } while (iter < i2);
+            }
+            return 0;
+        }
+
+        int result = i1 >= i2 ? i1 : i2;
+        return result;
+    }
+
+    /**
+     * На этот метод необходимо написать unit-тест
+     * Тест должен содержать mock на объект {@link Utils} (реализация неизвестна)
+     * Необходимо проверить результат выполнения метода в зависимости от возможных реализаций {@link Utils}
      * @return - true, если Utils#utilFunc2() возвращает true
      */
     public boolean ifElseExample()
