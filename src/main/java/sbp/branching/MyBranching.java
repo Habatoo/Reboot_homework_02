@@ -15,6 +15,7 @@ public class MyBranching
      * На этот метод необходимо написать unit-тест
      * Тест должен содержать mock на объект {@link Utils} (реализация неизвестна)
      * Необходимо проверить результат выполнения метода в зависимости от возможных реализаций {@link Utils}
+     * 
      * @param i1 - первое значение
      * @param i2 - второе значение
      * @return - большее из значений или 0, если Utils#utilFunc2 вернёт true;
@@ -27,7 +28,11 @@ public class MyBranching
             {
                 do
                 {
-                    this.utils.utilFunc1("Hello");
+                    if (this.utils.utilFunc1("Hello"))
+                    {
+                        return 0;
+                    }
+                    iter ++;
                 } while (iter < i2);
             }
             return 0;
