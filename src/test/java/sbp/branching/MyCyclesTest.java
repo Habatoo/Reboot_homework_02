@@ -5,13 +5,18 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import sbp.common.Utils;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static org.mockito.ArgumentMatchers.anyString;
 
 public class MyCyclesTest
 {
     /**
-     * Проверка количества обращений к {@link Utils}
-     * Тест править нельзя
+     * РџСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІР° РѕР±СЂР°С‰РµРЅРёР№ Рє {@link Utils}
      */
     @Test
     public void cycleForExample_Test()
@@ -28,8 +33,7 @@ public class MyCyclesTest
     }
 
     /**
-     * Проверка количества обращений к {@link Utils}
-     * Тест править нельзя
+     * РџСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІР° РѕР±СЂР°С‰РµРЅРёР№ Рє {@link Utils}
      */
     @Test
     public void cycleWhileExample_Test()
@@ -46,8 +50,7 @@ public class MyCyclesTest
     }
 
     /**
-     * Проверка количества обращений к {@link Utils}
-     * Тест править нельзя
+     * РџСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІР° РѕР±СЂР°С‰РµРЅРёР№ Рє {@link Utils}
      */
     @Test
     public void cycleDoWhileExample_Test()
@@ -63,6 +66,5 @@ public class MyCyclesTest
 
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
     }
-
 
 }
