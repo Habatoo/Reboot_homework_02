@@ -56,7 +56,7 @@ public class MyCycles {
      * @param str  - строка для вывода через утилиту {@link Utils}
      */
     public void cycleDoWhileExample(int from, int to, String str) {
-        boolean needToContinue = false;
+        boolean needToContinue;
         do {
             needToContinue = utils.utilFunc1(str);
             from--;
