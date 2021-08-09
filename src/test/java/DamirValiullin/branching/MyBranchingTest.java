@@ -22,6 +22,11 @@ public class MyBranchingTest
         myBranching = new MyBranching(utilsMock);
     }
 
+    /**
+     * Ожидаем возврат 7 (наибольшего числа)
+     * при utilFunc1("Hello") == false и utilFunc2() == false
+     * интерфейса {@link Utils}
+     */
     @Test
     public void maxInt_test_0_0()
     {
@@ -32,6 +37,11 @@ public class MyBranchingTest
         Assertions.assertEquals(myBranching.maxInt(i1, i2), i2);
     }
 
+    /**
+     * Ожидаем возврат 0
+     * при utilFunc1("Hello") == false и utilFunc2() == true
+     * интерфейса {@link Utils}
+     */
     @Test
     public void maxInt_test_0_1()
     {
@@ -42,6 +52,11 @@ public class MyBranchingTest
         Assertions.assertEquals(myBranching.maxInt(i1, i2), 0);
     }
 
+    /**
+     * Ожидаем возврат 7 (наибольшего числа)
+     * при utilFunc1("Hello") == true и utilFunc2() == false
+     * интерфейса {@link Utils}
+     */
     @Test
     public void maxInt_test_1_0()
     {
@@ -52,6 +67,11 @@ public class MyBranchingTest
         Assertions.assertEquals(myBranching.maxInt(i1, i2), i2);
     }
 
+    /**
+     * Ожидаем возврат 0
+     * при utilFunc1("Hello") == true и utilFunc2() == true
+     * интерфейса {@link Utils}
+     */
     @Test
     public void maxInt_test_1_1()
     {
@@ -62,6 +82,11 @@ public class MyBranchingTest
         Assertions.assertEquals(myBranching.maxInt(i1, i2), 0);
     }
 
+    /**
+     * Ожидаем false
+     * при utilFunc2() == false
+     * интерфейса {@link Utils}
+     */
     @Test
     public void ifElseExample_test_0()
     {
@@ -70,6 +95,11 @@ public class MyBranchingTest
         Assertions.assertEquals(myBranching.ifElseExample(), false);
     }
 
+    /**
+     * Ожидаем true
+     * при utilFunc2() == true
+     * интерфейса {@link Utils}
+     */
     @Test
     public void ifElseExample_test_1()
     {
@@ -78,6 +108,12 @@ public class MyBranchingTest
         Assertions.assertEquals(myBranching.ifElseExample(), true);
     }
 
+    /**
+     * Проверка количества обращений к {@link Utils}
+     * при аргументе i == 0
+     * и utilFunc2() == false
+     * интерфейса {@link Utils}
+     */
     @Test
     public void switchExample_test_0_false()
     {
@@ -89,6 +125,12 @@ public class MyBranchingTest
         Mockito.verify(utilsMock, Mockito.times(0)).utilFunc1(anyString());
     }
 
+    /**
+     * Проверка количества обращений к {@link Utils}
+     * при аргументе i == 0
+     * и utilFunc2() == true
+     * интерфейса {@link Utils}
+     */
     @Test
     public void switchExample_test_0_true()
     {
@@ -101,6 +143,12 @@ public class MyBranchingTest
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
     }
 
+    /**
+     * Проверка количества обращений к {@link Utils}
+     * при аргументе i == 1
+     * вне зависимости от возвращаемых значений
+     * интерфейса {@link Utils}
+     */
     @Test
     public void switchExample_test_1()
     {
@@ -112,6 +160,12 @@ public class MyBranchingTest
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc2();
     }
 
+    /**
+     * Проверка количества обращений к {@link Utils}
+     * при аргументе i == 2
+     * вне зависимости от возвращаемых значений
+     * интерфейса {@link Utils}
+     */
     @Test
     public void switchExample_test_2()
     {
