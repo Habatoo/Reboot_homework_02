@@ -1,6 +1,7 @@
 package DamirValiullin.branching;
 
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import DamirValiullin.branching.MyCycles;
@@ -10,6 +11,15 @@ import static org.mockito.ArgumentMatchers.anyString;
 
 public class MyCyclesTest
 {
+    Utils utilsMock;
+    MyCycles myCycles;
+
+    @BeforeEach
+    public  void init(){
+        utilsMock = Mockito.mock(Utils.class);
+        myCycles = new MyCycles(utilsMock);
+    }
+
     /**
      * Проверка количества обращений к {@link Utils}
      */
@@ -18,13 +28,11 @@ public class MyCyclesTest
     {
         final int iterations = 2;
 
-        Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(true);
 
-        MyCycles myCycles = new MyCycles(utilsMock);
         myCycles.cycleForExample(iterations, "Hello!");
 
-        Mockito.verify(utilsMock, Mockito.times(iterations)).utilFunc1(anyString());
+        Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
     }
 
     /**
@@ -35,13 +43,11 @@ public class MyCyclesTest
     {
         final int iterations = 3;
 
-        Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(false);
 
-        MyCycles myCycles = new MyCycles(utilsMock);
         myCycles.cycleWhileExample(iterations, "Hello!");
 
-        Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
+        Mockito.verify(utilsMock, Mockito.times(iterations)).utilFunc1(anyString());
     }
 
     /**
@@ -53,10 +59,8 @@ public class MyCyclesTest
         final int from = 3;
         final int to = 2;
 
-        Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(false);
 
-        MyCycles myCycles = new MyCycles(utilsMock);
         myCycles.cycleDoWhileExample(from, to, "Hello!");
 
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());

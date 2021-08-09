@@ -23,7 +23,7 @@ public class MyCycles
     public void cycleForExample(int iterations, String str)
     {
         for(int i = 0; i < iterations; ++i){
-            if(!utils.utilFunc1(str)){
+            if(utils.utilFunc1(str)){
                 break;
             }
         }
@@ -44,7 +44,7 @@ public class MyCycles
 
         while (i < iterations){
             ++i;
-            if(!utils.utilFunc1(str)){
+            if(utils.utilFunc1(str)){
                 break;
             }
         }
@@ -69,7 +69,7 @@ public class MyCycles
         do{
             ++from;
             utils.printUtil();
-            if(!utils.utilFunc1(str)){
+            if(utils.utilFunc1(str)){
                 break;
             }
 
