@@ -21,7 +21,7 @@ public class MyCyclesTest
         Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(true);
 
-        DamirValiullin.branching.MyCycles myCycles = new DamirValiullin.branching.MyCycles(utilsMock);
+        MyCycles myCycles = new MyCycles(utilsMock);
         myCycles.cycleForExample(iterations, "Hello!");
 
         Mockito.verify(utilsMock, Mockito.times(iterations)).utilFunc1(anyString());
@@ -38,7 +38,7 @@ public class MyCyclesTest
         Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(false);
 
-        DamirValiullin.branching.MyCycles myCycles = new DamirValiullin.branching.MyCycles(utilsMock);
+        MyCycles myCycles = new MyCycles(utilsMock);
         myCycles.cycleWhileExample(iterations, "Hello!");
 
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
@@ -56,7 +56,7 @@ public class MyCyclesTest
         Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(false);
 
-        DamirValiullin.branching.MyCycles myCycles = new MyCycles(utilsMock);
+        MyCycles myCycles = new MyCycles(utilsMock);
         myCycles.cycleDoWhileExample(from, to, "Hello!");
 
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
