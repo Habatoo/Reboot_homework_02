@@ -22,9 +22,11 @@ public class MyCycles
      */
     public void cycleForExample(int iterations, String str)
     {
-        /*
-        ...
-         */
+        for(int i = 0; i < iterations; ++i){
+            if(!utils.utilFunc1(str)){
+                break;
+            }
+        }
     }
 
     /**
@@ -38,9 +40,14 @@ public class MyCycles
      */
     public void cycleWhileExample(int iterations, String str)
     {
-        /*
-        ...
-         */
+        int i = 0;
+
+        while (i < iterations){
+            ++i;
+            if(!utils.utilFunc1(str)){
+                break;
+            }
+        }
     }
 
     /**
@@ -57,8 +64,15 @@ public class MyCycles
      */
     public void cycleDoWhileExample(int from, int to, String str)
     {
-        /*
-        ...
-         */
+        --from;
+
+        do{
+            ++from;
+            utils.printUtil();
+            if(!utils.utilFunc1(str)){
+                break;
+            }
+
+        } while (from < to);
     }
 }

@@ -3,8 +3,8 @@ package DamirValiullin.branching;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import sbp.branching.MyCycles;
-import sbp.common.Utils;
+import DamirValiullin.branching.MyCycles;
+import DamirValiullin.common.Utils;
 
 import static org.mockito.ArgumentMatchers.anyString;
 
@@ -21,7 +21,7 @@ public class MyCyclesTest
         Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(true);
 
-        sbp.branching.MyCycles myCycles = new sbp.branching.MyCycles(utilsMock);
+        DamirValiullin.branching.MyCycles myCycles = new DamirValiullin.branching.MyCycles(utilsMock);
         myCycles.cycleForExample(iterations, "Hello!");
 
         Mockito.verify(utilsMock, Mockito.times(iterations)).utilFunc1(anyString());
@@ -38,7 +38,7 @@ public class MyCyclesTest
         Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(false);
 
-        sbp.branching.MyCycles myCycles = new sbp.branching.MyCycles(utilsMock);
+        DamirValiullin.branching.MyCycles myCycles = new DamirValiullin.branching.MyCycles(utilsMock);
         myCycles.cycleWhileExample(iterations, "Hello!");
 
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
@@ -56,7 +56,7 @@ public class MyCyclesTest
         Utils utilsMock = Mockito.mock(Utils.class);
         Mockito.when(utilsMock.utilFunc1(anyString())).thenReturn(false);
 
-        sbp.branching.MyCycles myCycles = new MyCycles(utilsMock);
+        DamirValiullin.branching.MyCycles myCycles = new MyCycles(utilsMock);
         myCycles.cycleDoWhileExample(from, to, "Hello!");
 
         Mockito.verify(utilsMock, Mockito.times(1)).utilFunc1(anyString());
