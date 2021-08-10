@@ -63,7 +63,8 @@ public class MyBranchingTest {
     @Test
     public void switchExampleI0_Test() {
         myBranching.switchExample(0);
-        utilFuncVerify();
+        Mockito.verify(utilsMock).utilFunc1(anyString());
+        Mockito.verify(utilsMock).utilFunc2();
     }
 
     /**
@@ -72,23 +73,17 @@ public class MyBranchingTest {
     @Test
     public void switchExampleI1_Test() {
         myBranching.switchExample(1);
-        utilFuncVerify();
+        Mockito.verify(utilsMock).utilFunc1(anyString());
+        Mockito.verify(utilsMock).utilFunc2();
     }
 
     /**
-     * Проверка выполнения Utils#utilFunc1 и Utils#utilFunc2 при входящем i = 2
+     * Проверка выполнения Utils#utilFunc2 при входящем i = 2
      */
     @Test
     public void switchExampleI2_Test() {
         myBranching.switchExample(2);
-        utilFuncVerify();
-    }
-
-    /**
-     * Метод для проверки выполнения Utils#utilFunc1 и Utils#utilFunc2
-     */
-    public void utilFuncVerify() {
-        Mockito.verify(utilsMock).utilFunc1(anyString());
         Mockito.verify(utilsMock).utilFunc2();
     }
+
 }
